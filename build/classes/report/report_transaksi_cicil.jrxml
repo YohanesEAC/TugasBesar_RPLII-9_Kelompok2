@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="006df950-90e6-4d71-814b-3558660842d3">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kodepembelicicil" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tabel_detail_transaksi_cicil.`id_detail_transaksi_cicil` AS tabel_detail_transaksi_cicil_id_detail_transaksi_cicil,
+     tabel_detail_transaksi_cicil.`kode_pembeli_cicil` AS tabel_detail_transaksi_cicil_kode_pembeli_cicil,
+     tabel_detail_transaksi_cicil.`tanggal_pembeli` AS tabel_detail_transaksi_cicil_tanggal_pembeli,
+     tabel_detail_transaksi_cicil.`nama_pembeli` AS tabel_detail_transaksi_cicil_nama_pembeli,
+     tabel_detail_transaksi_cicil.`alamat_pembeli` AS tabel_detail_transaksi_cicil_alamat_pembeli,
+     tabel_detail_transaksi_cicil.`tenggang_waktu` AS tabel_detail_transaksi_cicil_tenggang_waktu,
+     tabel_detail_transaksi_cicil.`kode_barang` AS tabel_detail_transaksi_cicil_kode_barang,
+     tabel_detail_transaksi_cicil.`nama_barang` AS tabel_detail_transaksi_cicil_nama_barang,
+     tabel_detail_transaksi_cicil.`banyak_barang` AS tabel_detail_transaksi_cicil_banyak_barang,
+     tabel_detail_transaksi_cicil.`harga_satuan` AS tabel_detail_transaksi_cicil_harga_satuan,
+     tabel_detail_transaksi_cicil.`harga_total` AS tabel_detail_transaksi_cicil_harga_total,
+     tabel_detail_transaksi_cicil.`uang_muka` AS tabel_detail_transaksi_cicil_uang_muka,
+     tabel_detail_transaksi_cicil.`sisa` AS tabel_detail_transaksi_cicil_sisa
+FROM
+     `tabel_detail_transaksi_cicil` tabel_detail_transaksi_cicil
+WHERE
+     tabel_detail_transaksi_cicil.`kode_pembeli_cicil` = $P{kodepembelicicil}]]>
+	</queryString>
+	<field name="tabel_detail_transaksi_cicil_id_detail_transaksi_cicil" class="java.lang.Integer"/>
+	<field name="tabel_detail_transaksi_cicil_kode_pembeli_cicil" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_tanggal_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_nama_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_alamat_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_tenggang_waktu" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_kode_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_nama_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_banyak_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_harga_satuan" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_harga_total" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_uang_muka" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_sisa" class="java.lang.String"/>
+	<variable name="tabel_detail_transaksi_cicil_kode_pembeli_cicil_1" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{tabel_detail_transaksi_cicil_kode_pembeli_cicil}]]></variableExpression>
+	</variable>
+	<variable name="tabel_detail_transaksi_cicil_kode_pembeli_cicil_2" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{tabel_detail_transaksi_cicil_kode_pembeli_cicil}]]></variableExpression>
+	</variable>
+	<variable name="tabel_detail_transaksi_cicil_harga_satuan_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{tabel_detail_transaksi_cicil_harga_satuan}]]></variableExpression>
+	</variable>
+	<variable name="tabel_detail_transaksi_cicil_harga_total_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{tabel_detail_transaksi_cicil_harga_total}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="213" y="0" width="267" height="28" uuid="12ff307f-a22e-43d5-ac02-ba59897b2bc3"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FAKTUR PENJUALAN ( CICIL)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="28" width="100" height="20" uuid="3ddc6de2-8c30-41a3-8546-fd24eb2cb432"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Faktur  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="48" width="177" height="16" uuid="69b80d8c-3ec8-45a8-86ff-76f286d62f61"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOKO MEBE BIJAKSANA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="48" width="62" height="20" uuid="7e57d052-e37d-4d01-b758-11485b80794e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kpd Yth : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="64" width="114" height="20" uuid="f608103b-7bd3-42ae-87e5-c7e34e77f7a5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jalan Sriwijaya No 117]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="100" height="20" uuid="1ea763d1-8ade-47d4-ac53-33a4e7501249"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[+62813234546]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="339" y="28" width="100" height="20" uuid="8ba274a4-3e77-4d7d-a33a-2c9b4487e534"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_kode_pembeli_cicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="48" width="100" height="20" uuid="8fe80476-17f6-4f9f-a720-292a233f0055"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_nama_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="68" width="356" height="20" uuid="27e61a47-9cb9-45d8-a875-772bc8e6f489"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_alamat_pembeli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="752" height="1" uuid="0054ae9d-4862-4a8d-b814-2e0009eba956"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="16" width="100" height="20" uuid="c3aaf0da-340c-4011-8573-388c379ab22e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="100" height="20" uuid="61ea3685-bd94-46f0-a8bb-e730e586f2d7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sisa Pembayaran : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="16" width="100" height="20" uuid="b6e22082-e16f-4132-a2aa-20829292c565"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tenggang Waktu :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="16" width="100" height="20" uuid="588e3d9b-bd6f-43df-85f8-72d5c1c2d78a"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_tanggal_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="16" width="100" height="20" uuid="d2168aff-0a81-41f8-9dc0-fa36e75ffd31"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_tenggang_waktu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="36" width="100" height="20" uuid="aa4d786c-6b9d-4ec0-8b25-161fffc1b069"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_sisa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="c89043ef-537e-4ac0-89e3-358ccd4418a0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="41" width="100" height="20" uuid="47a6daac-adc0-4331-8dc9-ad9aa31a57c0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="41" width="100" height="20" uuid="9266da32-e2b8-4176-88b5-91ad78781013"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="41" width="100" height="20" uuid="4f74e69b-c86b-440a-9caa-07aeccee0668"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="587" y="41" width="100" height="20" uuid="23b526bc-e07a-46f0-89b1-c09c4ee32e35"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="139" y="0" width="100" height="20" uuid="bc59fbc5-1958-48fb-b74e-3161ca2e966a"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="df7d964b-7ad8-4847-8749-cb94b1914338"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_id_detail_transaksi_cicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="0" width="100" height="20" uuid="df31619b-01e2-483c-84a5-ffbeb74f0e94"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_banyak_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="0" width="100" height="20" uuid="eb574137-0a31-4fcb-b43c-1508aa96f5f0"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_harga_satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="587" y="0" width="100" height="20" uuid="78068938-e15f-49e1-9db0-6b472efe0d66"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_harga_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="118" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="28" width="749" height="1" uuid="80215291-df06-45e1-acae-0ded81c0d73a"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="98" width="127" height="20" uuid="805325ba-517c-4ca0-8d3f-cfa735696d69"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanda Tangan & Stempel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="98" width="137" height="20" uuid="a25b1969-6593-49b4-9044-39401c30f6ca"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanda Tangan & Stempel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="2" width="100" height="20" uuid="b293c2ac-0af8-4312-8a46-c9d4125407a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Biaya : Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="29" width="100" height="20" uuid="d2d9b176-3731-4e5c-ba3a-e69534f656a2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hormat Kami,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="100" height="20" uuid="84857376-f470-414d-8e28-2d62b58c52c6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penerima,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="587" y="2" width="100" height="20" uuid="56effc45-22d7-483e-af79-9c4536638fad"/>
+				<textFieldExpression><![CDATA[$V{tabel_detail_transaksi_cicil_harga_total_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="595" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6a69ad70-111d-4f5f-8e16-ad5ce6baf311">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kodepembelitunai" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tabel_detail_transaksi_tunai.`id_detail_transaksi_tunai` AS tabel_detail_transaksi_tunai_id_detail_transaksi_tunai,
+     tabel_detail_transaksi_tunai.`kode_pembeli_tunai` AS tabel_detail_transaksi_tunai_kode_pembeli_tunai,
+     tabel_detail_transaksi_tunai.`tanggal_pembeli` AS tabel_detail_transaksi_tunai_tanggal_pembeli,
+     tabel_detail_transaksi_tunai.`nama_pembeli` AS tabel_detail_transaksi_tunai_nama_pembeli,
+     tabel_detail_transaksi_tunai.`alamat_pembeli` AS tabel_detail_transaksi_tunai_alamat_pembeli,
+     tabel_detail_transaksi_tunai.`kode_barang` AS tabel_detail_transaksi_tunai_kode_barang,
+     tabel_detail_transaksi_tunai.`nama_barang` AS tabel_detail_transaksi_tunai_nama_barang,
+     tabel_detail_transaksi_tunai.`banyak_barang` AS tabel_detail_transaksi_tunai_banyak_barang,
+     tabel_detail_transaksi_tunai.`harga_satuan` AS tabel_detail_transaksi_tunai_harga_satuan,
+     tabel_detail_transaksi_tunai.`harga_total` AS tabel_detail_transaksi_tunai_harga_total
+FROM
+     `tabel_detail_transaksi_tunai` tabel_detail_transaksi_tunai
+WHERE
+     kode_pembeli_tunai = $P{kodepembelitunai}]]>
+	</queryString>
+	<field name="tabel_detail_transaksi_tunai_id_detail_transaksi_tunai" class="java.lang.Integer"/>
+	<field name="tabel_detail_transaksi_tunai_kode_pembeli_tunai" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_tanggal_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_nama_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_alamat_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_kode_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_nama_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_tunai_banyak_barang" class="java.lang.Integer"/>
+	<field name="tabel_detail_transaksi_tunai_harga_satuan" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_tunai_harga_total" class="java.lang.Double"/>
+	<variable name="tabel_detail_transaksi_tunai_harga_satuan_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{tabel_detail_transaksi_tunai_harga_satuan}]]></variableExpression>
+	</variable>
+	<group name="tabel_detail_transaksi_tunai_kode_pembeli_tunai">
+		<groupExpression><![CDATA[$F{tabel_detail_transaksi_tunai_kode_pembeli_tunai}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="186" y="0" width="202" height="29" uuid="87ed24ee-9e3c-4dbb-94fa-e6f15c18bf0b"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FAKTUR PENJUALAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="29" width="73" height="20" uuid="6be26dfa-0bcf-4941-8223-f24951bc4052"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kode Faktur : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="49" width="73" height="20" uuid="f2093062-76b2-4019-a7eb-4a20abe1c021"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kpd Yth         :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="46" width="141" height="20" uuid="3bb9afde-66f2-404a-ae98-8637dc94086e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Toko Mebel Bijaksana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="128" height="20" uuid="d6f745a8-e021-4ec2-8b3f-d9ff412e9d17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jalan Sriwijaya No.117]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="29" width="93" height="20" uuid="c8fa20bb-91ef-4689-ac1f-54d686a554a3"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_kode_pembeli_tunai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="49" width="100" height="20" uuid="b5d41171-6df7-4ca6-a1a5-a6d89d601f18"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_nama_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="69" width="275" height="20" uuid="5377f265-b465-4cb4-bc3a-7f4d499f37f6"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_alamat_pembeli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="86" width="100" height="20" uuid="0996bea9-1af5-43bf-a698-e7501a3b906d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[+62813234546]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="15344f18-e825-4506-96e7-6a47366ff430"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="11" width="51" height="20" uuid="a63261d9-6db2-4e23-9308-c57399b5029a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="11" width="145" height="20" uuid="44b6a9fc-5dab-4ab9-8549-7f02c928cb24"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pembayaran Secara : TUNAI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="11" width="100" height="20" uuid="09182b5f-c53d-47ce-82a3-30690f4c6c51"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_tanggal_pembeli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="20" uuid="ca9c2de9-8976-42bf-992c-b9c056994047"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="30" width="100" height="20" uuid="48d310dd-1a37-41e4-b0d1-a70e46b7b5aa"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="30" width="100" height="20" uuid="258eb117-9853-4dd9-b037-d3e0ffcab529"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="30" width="100" height="20" uuid="3c63977f-a398-41f0-b155-1a7a519b27e8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cd7447fd-5475-4fbe-8cba-f403a38f01ca"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_id_detail_transaksi_tunai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="0" width="100" height="20" uuid="a48c1c6d-e8f9-4d11-9680-34331efa5dbe"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_nama_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="96" height="20" uuid="119eb2ff-3d86-4c52-8f52-10032dccb115"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_banyak_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="3cf8096b-7c5a-44d5-ba8c-5a08f54a4546"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_tunai_harga_satuan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="102">
+			<line>
+				<reportElement x="0" y="26" width="555" height="1" uuid="b2305014-039f-4e4a-8128-3b99267fd489"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="82" width="100" height="20" uuid="39ceb2da-e21e-4fe8-88d7-307463913408"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Penerima, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="128" height="20" uuid="f68101df-5245-4d49-a03e-a2ff1c967333"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanda Tangan & Stempel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="82" width="130" height="20" uuid="97eb10ad-cb60-4e30-af0c-395c0007783d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanda Tangan & Stempel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="30" width="100" height="20" uuid="05c098e5-96f4-450f-a447-c80ee38ca322"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hormat Kami,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="86" height="20" uuid="4a25c2bf-b9d8-4bf1-b136-fe2a3e583cf4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga Total Rp.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="8ea1e053-e480-49f0-b102-626d291bdc90"/>
+				<textFieldExpression><![CDATA[$V{tabel_detail_transaksi_tunai_harga_satuan_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

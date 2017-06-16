@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="81b7fd20-884d-4e34-bb72-a9715d19135e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="kodepembelicicil" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tabel_detail_transaksi_cicil.`id_detail_transaksi_cicil` AS tabel_detail_transaksi_cicil_id_detail_transaksi_cicil,
+     tabel_detail_transaksi_cicil.`kode_pembeli_cicil` AS tabel_detail_transaksi_cicil_kode_pembeli_cicil,
+     tabel_detail_transaksi_cicil.`tanggal_pembeli` AS tabel_detail_transaksi_cicil_tanggal_pembeli,
+     tabel_detail_transaksi_cicil.`nama_pembeli` AS tabel_detail_transaksi_cicil_nama_pembeli,
+     tabel_detail_transaksi_cicil.`alamat_pembeli` AS tabel_detail_transaksi_cicil_alamat_pembeli,
+     tabel_detail_transaksi_cicil.`tenggang_waktu` AS tabel_detail_transaksi_cicil_tenggang_waktu,
+     tabel_detail_transaksi_cicil.`kode_barang` AS tabel_detail_transaksi_cicil_kode_barang,
+     tabel_detail_transaksi_cicil.`nama_barang` AS tabel_detail_transaksi_cicil_nama_barang,
+     tabel_detail_transaksi_cicil.`banyak_barang` AS tabel_detail_transaksi_cicil_banyak_barang,
+     tabel_detail_transaksi_cicil.`harga_satuan` AS tabel_detail_transaksi_cicil_harga_satuan,
+     tabel_detail_transaksi_cicil.`harga_total` AS tabel_detail_transaksi_cicil_harga_total,
+     tabel_detail_transaksi_cicil.`uang_muka` AS tabel_detail_transaksi_cicil_uang_muka,
+     tabel_detail_transaksi_cicil.`sisa` AS tabel_detail_transaksi_cicil_sisa
+FROM
+     `tabel_detail_transaksi_cicil` tabel_detail_transaksi_cicil
+WHERE
+     tabel_detail_transaksi_cicil.kode_pembeli_cicil = $P{kodepembelicicil}]]>
+	</queryString>
+	<field name="tabel_detail_transaksi_cicil_id_detail_transaksi_cicil" class="java.lang.Integer"/>
+	<field name="tabel_detail_transaksi_cicil_kode_pembeli_cicil" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_tanggal_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_nama_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_alamat_pembeli" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_tenggang_waktu" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_kode_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_nama_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_banyak_barang" class="java.lang.String"/>
+	<field name="tabel_detail_transaksi_cicil_harga_satuan" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_harga_total" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_uang_muka" class="java.lang.Double"/>
+	<field name="tabel_detail_transaksi_cicil_sisa" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="153" y="13" width="269" height="32" uuid="104f1d75-c910-49c6-b3c1-f47f23726304"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[REPORT TRANSAKSI TUNAI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="139" height="20" uuid="f6b1cb77-f36d-4792-bf94-b59af85fce9d"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Toko Mebel Sempurna Jaya]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9811a3e4-805e-4c3b-abff-c2c350e6b65a"/>
+				<text><![CDATA[Jalan Cintai Kamu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="100" height="20" uuid="25470a3d-c6ca-405c-804a-1d71ee6749fe"/>
+				<text><![CDATA[08423154xxxxx]]></text>
+			</staticText>
+			<textField pattern="MMMMM-yy">
+				<reportElement x="139" y="5" width="100" height="20" uuid="5945895e-a99b-4071-8db1-2164995accb3"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="0" y="30" width="76" height="20" uuid="ec435683-11b0-400c-9333-c86d8331ad49"/>
+				<text><![CDATA[ID TRANSAKSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="30" width="100" height="20" uuid="620a716e-7250-4082-a93d-66fcd7783d71"/>
+				<text><![CDATA[KODE PEMBELI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="30" width="100" height="20" uuid="527714eb-0caf-461a-bbcd-830e75e15cee"/>
+				<text><![CDATA[TANGGAL PEMBELI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="30" width="100" height="20" uuid="ec020ed3-9e5f-4169-aed1-60f2cf2028a2"/>
+				<text><![CDATA[NAMA PEMBELI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="89" y="0" width="100" height="20" uuid="87951a45-208b-4881-aa93-2f4c38e2df8d"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_kode_pembeli_cicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="0" width="100" height="20" uuid="b5fd1cef-2fa7-49f3-a2d5-4403e02eae1e"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_tanggal_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="0" width="100" height="20" uuid="48f9575a-1718-48f4-9c84-89a8819db2a7"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_nama_pembeli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="64" height="20" uuid="15f3c867-5c67-42fa-9ef1-b6d15f2660f8"/>
+				<textFieldExpression><![CDATA[$F{tabel_detail_transaksi_cicil_id_detail_transaksi_cicil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
