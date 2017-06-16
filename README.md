@@ -3,6 +3,7 @@ Tugas Besar Rekayasa Perangkat Lunak II - 9 (2017)
 KELOMPOK 2
 -------------------------------------------------
 SISTEM INFORMASI TOKO MEUBEL 
+
 LEADER		: ANGGY EDO PRASETYA (10114173)
 ANGGOTA 	:  
 1. ANDRI ARMIYANTO (10114077) 
